@@ -1,44 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="infoFlix/styles/styles.css">
     <title>Top Flix</title>
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 </head>
+
 <body>
+
     <header>
         <nav>
-            <ul>
-                <li><a href="#">Série</a></li>
-                <li><a href="#">Filme</a></li>
-                <li><a href="index.html">Top Flix</a></li>
-            </ul>
+            <h1><a href="/index.html">TopFlix</a></h1>
         </nav>
-
     </header>
+
     <section>
         <div id="home">
-            <input type="text" id="search">
-            <input type="button" value="Buscar pelo nome" onclick="buscar()">
+            <input type="text" id="search" placeholder="Insira o Nome">
+            <img src="/infoFlix/assets/lupa.png" id="lupa" onclick="buscar()" alt="Pesquisar">
         </div>
-        
+
         <div class="lista">
             <div id="titulos">
-
-            </div>
-            <p>Quantos Filmes você quer ver por Página?</p>
-            <select onchange="alterarValor()" id="meuSelect">
-                <option value="10">10</option>
-                <option value="30">30</option>
-                <option value="50">50</option>
-            </select>
-        </div>
     </section>
 
+    </div>
+    <p>Quantos Filmes você quer ver por Página?</p>
+    <select onchange="alterarValor()" id="meuSelect">
+        <option value="10">10</option>
+        <option value="30">30</option>
+        <option value="50">50</option>
+    </select>
+    </div>
+
     <footer>
-        <nav>Riquelme& Sergio</nav>
+        <nav>Riquelme & Sergio</nav>
     </footer>
-    <script src="scripts.js"></script>
+
+    <script src="infoFlix/scripts/scripts.js"></script>
 </body>
+
 </html>
