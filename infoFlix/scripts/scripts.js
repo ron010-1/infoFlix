@@ -1,6 +1,6 @@
 const URL = 'http://localhost:3000/series'; //Variavel da API 
 const filmeContent = document.querySelector('#titulos'); //Recebe o id titulos 
-let valorInicial = 10;
+let valorInicial = 12;
 async function GetApi(pagina, limit) { //Cria a função assincrona para executar a API
   const data = await fetch(`${URL}?pagina=${pagina}&limite=${limit}`) //Criar a const para alterar os valores da api
   const dados = await data.json() // muda o recebimento de promise para json

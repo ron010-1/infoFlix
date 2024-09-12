@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    font-family: Inter, sans-serif;
+    font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+  }
+  @supports (font-variation-settings: normal) {
+    :root { font-family: InterVariable, sans-serif; }
+  }
+  
+body{
+    background-color:  rgb(154, 161, 180);
+}
+
+.hide{
+    display: none;
+}
+
+header {
+    background-color: rgb(95, 130, 224);
+    color: #fff;
+    padding: 20px;
+    border-bottom: 2px solid black;
+}
+
+footer {
+    background-color:  rgb(95, 130, 224);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+nav h1{
+    font-weight: 900;
+}
+
+a, input[type="submit"]{
+    color: #FFF;
+    cursor: pointer;
+
+}
+
+a:hover,input[type="submit"]{
+    opacity: 1;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
+#home {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding-top: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="text"]{
+    width: 400px;
+    height: 30px;
+    background-color: rgb(95, 130, 224);
+    border: 1px solid black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#lupa{
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.lista {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding-top: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.divFilmes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.divFilmes:hover{
+    background-color: rgb(142, 141, 2);
+    color: #FFF;
+}
+
+#titulos{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 80%;
+}
+
+.divFilmes img{
+    width: 300px;
+    height: 300px;
+}
