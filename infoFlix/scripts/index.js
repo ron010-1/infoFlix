@@ -16,12 +16,14 @@ async function series(pagina, limit) {
     let back = document.getElementById('left')
     back.style.display = 'block'
     back.addEventListener("click", () => {
+      deleteSeries();
       series(pagina - 1, limit);
     })
   }
   if (pagina + 1 <= dados.total / limit) {
     let next = document.getElementById('right');
     next.addEventListener("click", () => {
+      deleteSeries();
       series(pagina + 1, limit);
     })
   }
@@ -38,6 +40,10 @@ function showSeries(element) {
   div.appendChild(titulo)
   div.appendChild(img)
   filmeContent.appendChild(div)
+}
+
+function deleteSeries() {
+  filmeContent.innerHTML = '';
 }
 
 window.buscar = async function() {
