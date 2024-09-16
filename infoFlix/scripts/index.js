@@ -39,3 +39,5 @@ function showSeries(element) {
   div.appendChild(img)
   filmeContent.appendChild(div)
 }
+
+
