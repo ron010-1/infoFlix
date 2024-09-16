@@ -113,7 +113,14 @@ input[type="text"] {
     gap: 8px;
 }
 
-.oneSeries:hover {
+.oneSeries img:hover {
+    width: 350px;
+    height: 350px;
+}
+
+.oneSeries:hover{
+    font-size: 25px;
+    font-weight: bold;
     background-color: rgb(95, 130, 224);
     color: #FFF;
 }
