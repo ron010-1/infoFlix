@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./infoFlix/styles/styles.css">
+    <title>Top Flix</title>
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <h1 id="logo"><a href="/index.html">TopFlix</a></h1>
+            <h1><a href="film.html">Filmes</a></h1>
+            <h1><a href="series.html">Séries</a></h1>
+        </nav>
+    </header>
+
+    <section>
+        <div id="home">
+            <input type="text" id="search" placeholder="Insira o Nome">
+            <img src="/infoFlix/assets/lupa.png" id="lupa" onclick="buscar()" alt="Pesquisar">
+            <h2>Pesquise Todas as Séries </h2>
+            <p>Quantos Filmes você quer ver por Página?</p>
+            <select onchange="alterarValor()" id="meuSelect">
+                <option value="10">10</option>
+                <option value="30">30</option>
+                <option value="50">50</option>
+            </select>
+        </div>
+
+        <div class="lista">
+            <div id="divSeries">
+            </div>
+        </div>
+    </section>
+
+    <div id="pagination">
+        <img id="left" src="/infoFlix/assets/left.png" onclick="" alt="Left">
+        <img id="right" src="/infoFlix/assets/right.png" onclick="" alt="Right">
+    </div>
+
+    <footer>
+        <nav>Riquelme & Sergio</nav>
+    </footer>
+
+    <script type="module" src="/infoFlix/scripts/index.js"></script>
+</body>
+
+</html>
