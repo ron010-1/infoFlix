@@ -40,4 +40,31 @@ function showSeries(element) {
   filmeContent.appendChild(div)
 }
 
+window.buscar = async function() {
+  const inputBusca = document.getElementById('search').value.toLowerCase();
 
+  filmeContent.innerHTML = '';
+
+  
+  const dados = await getInfo(1, 240);
+
+  const resultadosFiltrados = dados.data.filter(elemento => {
+    const titulo = elemento.titulo.toLowerCase();
+    if (titulo.includes(inputBusca)) {
+      const termoDestacado = titulo.replace(new RegExp(inputBusca, 'gi'), match => `<span class="destaque">${match}</span>`);
+      elemento.tituloDestacado = termoDestacado;
+      return true;
+    }
+    return false;
+  });
+
+  resultadosFiltrados.forEach(elemento => {
+    showSeries(elemento);
+  });
+
+  if (resultadosFiltrados.length === 0) {
+    const mensagem = document.createElement('p');
+    mensagem.textContent = 'Nenhum resultado encontrado.';
+    filmeContent.appendChild(mensagem);
+  }
+}
