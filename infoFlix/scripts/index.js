@@ -40,20 +40,18 @@ function showSeries(element) {
   filmeContent.appendChild(div)
 }
 
-async function buscar() {
-  const inputBusca = document.getElementById('search');
-  const termoBusca = inputBusca.value.toLowerCase();
-  const listaResultados = document.getElementById('filmeContent');
+window.buscar = async function() {
+  const inputBusca = document.getElementById('search').value.toLowerCase();
 
-  listaResultados.innerHTML = '';
+  filmeContent.innerHTML = '';
 
   
   const dados = await getInfo(1, 240);
 
   const resultadosFiltrados = dados.data.filter(elemento => {
     const titulo = elemento.titulo.toLowerCase();
-    if (titulo.includes(termoBusca)) {
-      const termoDestacado = titulo.replace(new RegExp(termoBusca, 'gi'), match => `<span class="destaque">${match}</span>`);
+    if (titulo.includes(inputBusca)) {
+      const termoDestacado = titulo.replace(new RegExp(inputBusca, 'gi'), match => `<span class="destaque">${match}</span>`);
       elemento.tituloDestacado = termoDestacado;
       return true;
     }
@@ -61,19 +59,12 @@ async function buscar() {
   });
 
   resultadosFiltrados.forEach(elemento => {
-    const div = document.createElement('div');
-    div.className = 'oneSeries';
-
-    const titulo = document.createElement('p');
-    titulo.innerHTML = elemento.tituloDestacado; 
-   
-
-    listaResultados.appendChild(div);
+    showSeries(elemento);
   });
 
   if (resultadosFiltrados.length === 0) {
     const mensagem = document.createElement('p');
     mensagem.textContent = 'Nenhum resultado encontrado.';
-    listaResultados.appendChild(mensagem);
+    filmeContent.appendChild(mensagem);
   }
 }
